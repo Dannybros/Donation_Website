@@ -1,0 +1,6 @@
+[submodule "donation_website"]
+	path = donation_website
+	url = ./donation_website
+[submodule "donation_backend"]
+	path = donation_backend
+	url = ./donation_backend
