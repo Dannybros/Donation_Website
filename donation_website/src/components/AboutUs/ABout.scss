@@ -1,0 +1,78 @@
+$phone: 480px;
+$tablet: 768px;
+
+h1 {
+  margin: 40px 0;
+  font-family: "Times New Roman";
+  font-weight: bold;
+  @media screen and (max-width: $tablet) {
+    margin: 20px 0;
+  }
+}
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+.tab-content {
+  width: 90%;
+  margin: auto;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-family: "Times New Roman";
+  text-align: left;
+  padding-top: 40px;
+  @media screen and (max-width: $phone) {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+.president-msg-container {
+  img {
+    display: block;
+    width: 20%;
+    float: left;
+    margin: 0px 15px;
+    object-fit: cover;
+    border-radius: 10px;
+    @media screen and (max-width: $phone) {
+      width: 50%;
+    }
+  }
+  .president-msg {
+    margin: 0 10px;
+    text-align: left;
+    p {
+      font-family: "Times New Roman";
+      font-size: 20px;
+      text-indent: 10px;
+      color: #222;
+      @media screen and (max-width: $phone) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.mission_Principle {
+  width: 100%;
+  line-height: 5rem;
+  padding: 20px;
+  background: rgb(172, 214, 126);
+  p {
+    width: 80%;
+  }
+}

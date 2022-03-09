@@ -1,0 +1,323 @@
+$tablet: 768px;
+$laptop:1200px;
+$phone: 425px;
+
+@mixin absolute-center($height) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@mixin display-center() {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.donation_discover{
+  .discover-heading-section {
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+    text-align: left;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      padding: 40px 30px;
+    }
+    @media (max-width:$phone) {
+      padding: 20px 10px;
+     }
+    .btnBackHome {
+      padding: 10px 15px;
+      border: 1px solid rgb(206, 206, 206);
+      background: #f2d9c7;
+      margin-bottom: 20px;
+    }
+    .discover_heading {
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 2.5rem;
+      line-height: 3rem;
+      @media (max-width:$phone) {
+       font-size: 1.6rem; 
+      }
+    }
+    .discover_heading2 {
+      color: grey;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      @media (max-width:$phone) {
+        font-size: 1.2rem; 
+       }
+    }
+  }
+  .discover-content-section {
+    width: 100%;
+    background: #fbf8f6;
+    margin: 0px !important;
+    padding:50px;
+    padding-top: 0px !important;
+    @media (max-width: $tablet) {
+      padding: 30px;
+    }
+    @media (max-width: $phone) {
+      padding: 10px;
+    }
+    .donate__all__section {
+      padding: 30px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(244, 247, 200, 0.774);
+      border-bottom: 0.2px solid rgb(201, 199, 199);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: yellowgreen;
+        width: 100%;
+        height: 5px;
+      }
+      @media screen and (max-width: $tablet) {
+        display: block;
+      }
+      h1{
+        margin-top: 10px;
+        @media screen and (max-width: $tablet) {
+          font-size: 30px;
+          margin-top: 0;
+        }
+      }
+      .overall___content{
+        width: 80%;
+        overflow: hidden;
+        margin: auto;
+        display: flex;
+        @media screen and (max-width: $tablet) {
+          width: 100%;
+        }
+        @media screen and (max-width: 569px) {
+          display: block;
+        }
+        div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          font-family: 'Times New Roman', Times, serif;
+          p {
+            font-size: 18px;
+            text-align: left;
+            letter-spacing: 2px;
+            text-align: justify;
+            @media screen and (max-width: $tablet) {
+              font-size: 14px;
+              letter-spacing: 0;
+            }
+            @media screen and (max-width: 569px) {
+             font-size: 16px;
+            }
+          }
+          button {
+            width: 100%;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 22px;
+            background-color: rgb(185, 237, 133);
+            border-radius: 5px;
+            padding: 15px 40px;
+            &:hover {
+              color: white;
+              background-color: rgb(152, 211, 94);
+            }
+            @media (max-width:$tablet) {
+              padding: 10px 40px;
+            }
+          }
+        }
+        img {
+          width: 50%;
+          margin-right: 50px;
+          border-radius: 8px;
+          border: none;
+          object-fit: cover;
+          border-right: none;
+          @media (max-width:569px) {
+            margin-right: 0;
+            width: 100%;
+            height: 150px;
+            border-radius: 0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .discover-content-box{
+      width: 80%;
+      margin: auto;
+      display: flex;
+      row-gap: 30px;
+      @media (max-width: $laptop) {
+        width: 100%;
+        padding:30px 10px;
+      }
+      @media (max-width: $tablet) {
+        padding:10px !important;
+      }
+      .Project__row{
+        height: 100%;
+        padding: 20px;
+        background: white;
+        display: flex;
+        column-gap: 20px;
+        overflow:hidden;
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+        @media (max-width:$tablet) {
+          height: 100%;
+          flex-direction: column;
+          column-gap: 0;
+          row-gap: 10px;
+          border-radius: 10px;
+        }
+        img{
+          height: 200px;
+          min-width: 350px;
+          object-fit: cover;
+          @media screen and (max-width: $tablet) {
+            min-width: 0 !important;
+            height: 150px;
+            width: auto;
+          }
+        }
+        .Project__info{
+          width: 100%;
+          box-sizing: border-box;
+          h2{
+            font-weight:bold;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 10px;
+            @media (max-width:$tablet) {
+              font-size: 15px;
+              min-height: 55px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          p{
+            text-align: left;
+            text-indent: 15px;
+            max-height: 100px;
+            box-sizing: border-box;
+            display: -webkit-box;
+            text-align: left;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @media (max-width:$tablet) {
+              margin-bottom: 5px;
+            }
+            @media (max-width:$phone) {
+              font-size: 16px;
+            }
+          }
+          .Project___donate_button{
+            button{
+              border: none;
+              border-radius: 5px;
+              box-sizing: border-box;
+              padding: 7px 10px;
+              width:80%;
+              background: #00f0b5;
+              margin-bottom: 5px;
+              font-weight: bold;
+              text-transform: capitalize;
+              font-size: 18px;
+              transition: all 0.4s ease;
+              &:hover{
+                background: #98ffcc;
+              }
+            }
+          }
+          .Project_percentage_teller{
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            width: 100%;
+            span{
+              margin-right: 5px;
+              padding-top: 5px;
+              width: 50px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &:last-child{
+                margin-left: 5px;
+                margin-right: 0px;
+              }
+            }
+            .project___percentage{
+              position: relative;
+              width: 100%;
+              .percentage_box{
+                @include absolute-center(5);
+                width: 100%;
+                height: 5px;
+                background: grey;
+              }
+              .percentage_progress{
+                @include absolute-center(5);
+                height: 5px;
+                background: rgb(152, 211, 94);
+              }
+              .percentage_teller{
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%);
+                width: 30px;
+                height:25px;
+                background: yellowgreen;
+                color: black;
+                font-size: 10px;
+                font-weight: bold;
+                @include display-center();
+              }
+            }
+          }
+        }
+      }
+      .discover___heading4 {
+        margin: 30px 0 20px;
+        font-family: "Times New Roman";
+        position: relative;
+        @media screen and (max-width:$tablet) {
+          margin-top: 10px;
+        }
+        h3 {
+          font-weight: bold;
+          font-size: 45px;
+          text-align: left;
+          @media screen and (max-width:$tablet) {
+            font-size: 30px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: yellowgreen;
+          width:100%;
+          height: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,339 @@
+$phone: 480px;
+$tablet: 1000px;
+
+@mixin absolute-center($height) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@mixin display-center() {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+
+@keyframes animateBottom {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes animateTop {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post_spinner{
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .post_container {
+    width: 70%;
+    padding: 40px 30px;
+    background-color: rgb(255, 248, 234);
+    height: 100%;
+    @media screen and (max-width: $tablet) {
+      width: 90%;
+    }
+    @media screen and (max-width: $phone) {
+     width: 100%;
+     padding: 20px 10px;
+    }
+    .post_blog_box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      .post_content_info {
+        flex: 0.66;
+        padding: 0px 10px;
+        animation: animateTop 2s forwards;
+        @media screen and (max-width: $tablet) {
+          flex: 1;
+        }
+        .mainImg {
+          margin-left: -20px;
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+          @media screen and (max-width: $tablet) {
+            margin-left: 0;
+          }
+        }
+        .post_title {
+          width: 100%;
+          text-align: left;
+          text-transform: capitalize;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background-color: rgb(38, 216, 133);
+            @media (max-width:780px) {
+              width: 0px;
+            }
+          }
+          @media screen and (max-width:$phone) {
+            font-size: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 0px;
+          }
+        }
+        .post_content {
+          span {
+            text-align: justify;
+            text-indent: 15px;
+            @media screen and (max-width:$phone) {
+              text-indent: 5px;
+            }
+          }
+          img{
+            margin-top: 15px;
+            width: 100% !important;
+            @media screen and(max-width:$phone) {
+              max-height: 200px;
+            }
+          }
+          @media screen and(max-width:$phone) {
+            width: auto !important;
+            padding:0 !important;
+          }
+        }
+        .donation_view {
+          display: none;
+          width: 100%;
+          text-align: left;
+          margin-bottom: 10px;
+          @media screen and (max-width: $tablet) {
+            display: block;
+          }
+          p {
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            @media screen and (max-width: $phone) {
+              font-size: 14px;
+              color: rgb(72, 71, 71);
+            }
+            .view_donors {
+              color: rgb(90, 60, 223);
+            }
+            span {
+              font-weight: bold;
+              text-transform: capitalize;
+            }
+          }
+          button {
+            width: 100%;
+            border: 0.5px solid grey;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            text-transform: capitalize;
+            margin: 5px 0;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            background: linear-gradient(
+              180deg,
+              #22e673 35.82%,
+              #078d34 139.58%
+            );
+            @media screen and (max-width: $tablet) {
+              font-size: 16px;
+
+            }
+            @media screen and (max-width: $phone) {
+              font-size: 14px;
+            }
+          }
+        }
+        .post_date {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          color: 1px solid rgb(174, 174, 174);
+          border-top: 1px solid rgb(148, 148, 148);
+          border-bottom: 1px solid rgb(148, 148, 148);
+          padding: 5px 0;
+          span {
+            padding: 0px 10px;
+            font-size: 14px;
+            border-right: 1px solid rgb(148, 148, 148);
+            @media screen and (max-width: $phone) {
+              font-size: 12px;
+            }
+          }
+          div {
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+              color: rgb(196, 87, 196);
+            }
+            @media screen and (max-width: $tablet) {
+              color: rgb(90, 60, 223);
+            }
+            @media screen and (max-width: $phone) {
+              width: 100px;
+              font-size: 12px;
+            }
+          }
+        }
+        .post_content {
+          width: 100%;
+          text-align: justify;
+          text-indent: 10px;
+          padding: 20px;
+          padding-left: 40px !important;
+          color: rgb(99, 97, 97);
+          @media screen and (max-width: $tablet) {
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+          }
+          @media screen and (max-width: $phone) {
+            padding: 10px !important;
+          }
+        }
+        button {
+          width: 100%;
+          font-size: 20px;
+          padding: 10px 0;
+          background: linear-gradient(
+              180deg,
+              #22e673 35.82%,
+              #078d34 139.58%
+            );
+          border: none;
+          color: white;
+          cursor: pointer;
+          &:hover{
+            background: #299237;
+          }
+        }
+      }
+      .post_donation {
+        position: relative;
+        flex: 0.33;
+        animation: animateBottom 2s forwards;
+        @media screen and (max-width: $tablet) {
+          display: none;
+        }
+        .post_donation_info {
+          background: white;
+          text-align: left;
+          padding: 10px;
+          box-shadow: 0 0.3125rem 1rem -0.1875rem rgb(0 0 0 / 20%);
+          button {
+            width: 100%;
+            margin: 10px 0;
+            border: 0.3px solid grey;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(
+              180deg,
+              #22e673 35.82%,
+              #078d34 139.58%
+            );
+            cursor: pointer;
+            text-transform: capitalize;
+            font-weight: 500;
+            text-align: center;
+            position: relative;
+            &:hover{
+              background: #299237;
+            }
+          }
+        }
+        .adsItemBox{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          img{
+            width: 90%;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+.btnicon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 35px !important;
+  cursor: pointer !important;
+}
+.project___percentage{
+  position: relative;
+  margin: 20px 0 40px;
+  width: 100%;
+  .percentage_box{
+    @include absolute-center(5);
+    width: 100%;
+    height: 5px;
+    background: grey;
+  }
+  .percentage_progress{
+    @include absolute-center(5);
+    height: 5px;
+    background: rgb(38, 216, 133);
+  }
+  .percentage_teller{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    width: 30px;
+    height:25px;
+    background: rgb(38, 216, 133);
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    @include display-center();
+  }
+}
+
+.tablet-show{
+  display: none !important;
+  @media (max-width:$tablet) {
+    display: block !important
+  }
+}

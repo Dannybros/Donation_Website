@@ -1,0 +1,43 @@
+$phone: 480px;
+$tablet: 768px;
+
+.cases {
+  width: 100%;
+  display: flex;
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px -6px #777, 0 -4px 10px -6px #777;
+  @media screen and (max-width: $phone) {
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .cases_container {
+    width: 75%;
+    @media screen and (max-width: $tablet) {
+      width: 90%;
+    }
+    .cases_title {
+      border-bottom: 2px solid rgb(75, 98, 179);
+      font-size: 48px;
+      padding-bottom: 10px;
+      font-weight: bold;
+      font-family: "Times New Roman", Times, serif;
+      color: rgb(75, 98, 179);
+      @media screen and (max-width: $phone) {
+        font-size: 25px;
+      }
+    }
+    .cases_box {
+      background: rgb(206, 205, 205);
+      list-style: none;
+      height: 100%;
+      margin: 50px 0 ;
+      padding: 10px 5px;
+      border-bottom: 2px solid rgb(75, 98, 179);
+      @media screen and (max-width: $phone) {
+        margin: 30px 0;
+      }
+    }
+  }
+}

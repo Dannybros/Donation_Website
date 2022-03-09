@@ -1,0 +1,71 @@
+$phone: 480px;
+$tablet: 768px;
+
+.about-section {
+  width: 100%;
+  height: 100%;
+  background: rgb(240, 239, 218);
+  display: flex;
+  box-shadow: 0 4px 10px -6px #777, 0 -4px 10px -6px #777;
+  justify-content: center;
+  .About-msg-box {
+    width: 60%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: "Times New Roman";
+    text-align: left;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      padding: 30px 30px 10px;
+    }
+    .about__context{
+      line-height:40px;
+      font-size: 17px;
+      font-weight: bold;
+      text-indent: 10px;
+      @media screen and (max-width: $phone) {
+        font-size: 14px !important;
+        line-height: 30px;
+        text-align: justify;
+      }
+    }
+    .about-title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid rgb(75, 98, 179);
+      margin-bottom: 10px;
+      span {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: rgb(75, 98, 179);
+        @media screen and (max-width: $phone) {
+          font-size: 18px;
+        }
+      }
+      button {
+        background: rgb(75, 98, 179);
+        border-radius: 100px;
+        border: none;
+        margin: 10px;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.4s;
+        box-shadow: 0px;
+        transform: translateY(0) px;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+        }
+        @media screen and (max-width: $phone) {
+          font-size: 14px;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}

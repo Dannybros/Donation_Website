@@ -1,0 +1,130 @@
+// @import "~bootstrap/scss/bootstrap";
+.footer {
+  padding: 50px 100px;
+  background-color: #1b3753;
+  border-top: 1px solid #5e88fc;
+  color: #fff;
+  transition: all 2s ease;
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  @media (max-width: 480px) {
+    padding: 10px 20px 0px;
+  }
+  .section_left {
+    height: 100%;
+    img {
+      width: 70%;
+      object-fit: contain;
+      @media (max-width: 480px) {
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      text-align: left;
+      max-height: 200px;
+    }
+    .social_Icon {
+      padding: 10px 0;
+      transform: scale(1.1);
+      display: flex;
+      justify-content: space-around;
+      & > * {
+        cursor: pointer;
+      }
+    }
+  }
+  .section_middle {
+    height: 100%;
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: "Times New Roman", "Times, serif";
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      li {
+        width: 50%;
+        display: flex;
+        margin: 10px auto;
+        div {
+          width:100%;
+          margin-left: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .section_right {
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: "Times New Roman", "Times, serif";
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      max-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      li {
+        cursor: pointer;
+        display: flex;
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
+        margin-bottom: 30px;
+        img {
+          width: 30%;
+          height: 80px;
+          object-fit: cover;
+          user-select: none;
+        }
+        div {
+          width: 70%;
+          text-transform: capitalize;
+          text-align: left;
+          background: white;
+          color: black;
+          position: relative;
+          user-select: none;
+          p {
+            height: 60px;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            @media (max-width: 480px) {
+             font-size: 14px;
+            }
+          }
+          span {
+            position: absolute;
+            bottom: 5px;
+            left: 10px;
+            font-size: 12px;
+            color: rgb(87, 85, 85);
+          }
+        }
+      }
+    }
+  }
+}

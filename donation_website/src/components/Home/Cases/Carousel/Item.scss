@@ -1,0 +1,217 @@
+$tablet: 768px;
+$laptop:1200px;
+$phone: 425px;
+
+.box__item {
+  height: 510px;
+  box-sizing: border-box;
+  user-select: none;
+  margin:0 5px !important;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  position: relative;
+  @media (max-width: $tablet) {
+    height: 100%;
+  }
+}
+.imgItem {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  align-items: center;
+  @media screen and (max-width: $tablet) {
+    height: 150px;
+  }
+}
+.imgItem:hover {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imgItem button {
+  padding: 10px 20px;
+  background: rgb(24, 150, 24);
+  border-radius: 40px;
+  border: 1px solid white;
+  transition: all 1s;
+  opacity: 0;
+  color: white;
+  cursor: pointer;
+}
+.imgItem:hover button {
+  opacity: 1;
+}
+.item__info {
+  width: 100%;
+  max-height: 170px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: $tablet) {
+    padding: 5px 0px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 90px;
+    box-sizing: border-box;
+    overflow:hidden;
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.item__title {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 0px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+  &:hover{
+    color: brown;
+  }
+  @media screen and (max-width:768px) {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+}
+.item__des {
+  color: rgb(44, 44, 44);
+  width: 100%;
+  max-height: 100px;
+  font-size: 14px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  text-align: justify;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-indent: 15px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.itemGoal_percentage {
+  margin-top: 5px;
+  width: 100%;
+  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgb(175, 173, 173) !important;
+  margin-bottom: 5px;
+}
+.progress-line {
+  height: 5px;
+  background: darkgreen;
+  @media screen and (max-width: 480px) {
+    height: 5px;
+  }
+}
+
+.progress-teller {
+  padding: 5px 10px;
+  width: 50px;
+  color: white;
+  font-size: 12px;
+  background: darkgreen;
+  border-radius: 10px;
+  position: relative;
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+    width: 35px;
+    padding: 5px;
+  }
+}
+.progress-teller::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 35%;
+  width: 3px;
+  height: 11px;
+  background: darkgreen;
+  transform: translateX(-35%);
+  @media screen and (max-width: 480px) {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+}
+.goal__target {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  color: grey;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    margin: 10px 0;
+  }
+}
+.goal__target h3 {
+  font-size: 14px;
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+  }
+}
+.itemGoal_percentage button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  background: #00f0b5;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  @media screen and (max-width:768px) {
+    margin: 5px auto;
+    width: 90%;
+    padding: 5px 0;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 5px 0px;
+    margin-top: 5px;
+  }
+}
+
+.itemGoal_percentage span {
+  color: #00f0b5;
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: "Times News Roman";
+  font-weight: bold;
+  mix-blend-mode: difference;
+  @media screen and (max-width: 480px) {
+    font-size: 13px;
+  }
+}
+
+.itemGoal_percentage button:hover {
+  background-color: rgb(117, 255, 186);
+}

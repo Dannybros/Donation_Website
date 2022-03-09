@@ -1,0 +1,146 @@
+.nav {
+  width: 100%;
+  height: 100px;
+  background: white;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid greenyellow;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  animation: slidein 1s ease;
+}
+@media (max-width:480px) {
+  .nav{
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 80px;
+  }
+  .logoImg{
+    height: 80px !important;
+    width: auto !important;
+    padding: 5px 0;
+    margin-top:0 !important;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logoImg {
+  width: 220px;
+  height: 100%;
+  margin-top: -20px;
+  color: white;
+  fill: white;
+}
+
+.nav-list {
+  width: 50%;
+  margin: none;
+  padding-left: 0 !important;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  list-style: none;
+}
+.nav__li {
+  list-style: none;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0px 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  color:black;
+}
+.nav__li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: black;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.nav__li:hover::after {
+  opacity: 1;
+}
+.activeLink{
+  position: relative;
+  width: 100%;
+}
+.activeLink::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 5px;
+  background: black;
+  opacity: 1 !important;
+}
+
+/* toggle-button */
+.toggle-button {
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button-line {
+  width: 40px;
+  height: 3px;
+  background: rgb(0, 0, 0);
+}
+.LangSelector-box {
+  width: 230px;
+}
+.LangSelector {
+  padding: 10px;
+  margin-top: -20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .nav-list {
+    display: none;
+  }
+  .logoimg {
+    margin-top: 0;
+  }
+  .LangSelector-box {
+    display: none;
+  }
+}

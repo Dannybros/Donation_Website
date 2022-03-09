@@ -1,0 +1,53 @@
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 300px;
+  height: 100%;
+  background: white;
+  z-index: 1300;
+  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+  transform: translateX(102%);
+  transition: all 1s ease;
+}
+.side-bar.open {
+  transform: translateX(0);
+}
+
+.side-bar img {
+  width: 100%;
+  height: 20%;
+  object-fit: contain;
+  border-bottom: 1px solid black;
+}
+
+.side-bar ul {
+  padding: 0 !important;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-bar ul li {
+  width: 70%;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: white;
+  background: rgb(39, 138, 219);
+  margin: 10px 0;
+}
+.LangSelect-box {
+  width: 70%;
+  margin: auto;
+  cursor: pointer;
+}
+.LangSelect {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+}
