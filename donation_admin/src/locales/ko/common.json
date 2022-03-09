@@ -1,0 +1,78 @@
+{
+    "sign":{
+        "title":"환영합니다!",
+        "username": "사용자 이름",
+        "password": "비밀번호",
+        "button": "로그인"
+    },
+    "news":{
+        "title":"뉴스",
+        "error":"뉴스 자료가 없습니다. 새로운 자료를 가입하시오...",
+        "buttonCreate":"뉴스 만들기",
+        "buttonProject":"프로젞트 페이지 가기",
+        "del":"지우기"
+    },
+    "news-form":{
+        "heading":"뉴스 만들기",
+        "title":"제목...",
+        "content":"내용...",
+        "submit":"보내기",
+        "label":"사진 선택하기",
+        "buttonNews": "전체 뉴스 보기"
+    },
+    "news_pagination":{
+        "first":"처음",
+        "prev": "전",
+        "next":"다음",
+        "last":"마지막"
+    },
+    "project": {
+        "title": "프로젝트",
+        "error":"프로젝트 자료가 없습니다. 새로운 자료를 가입하시오...",
+        "buttonCreate": "프로젝트 만들기",
+        "buttonNews": "뉴스 페이지 가기",
+        "loading": "로딩중...",
+        "viewDetail":"더 보기",
+        "del":"지우기"
+    },
+    "project-form":{
+        "heading":"프로젝트 페이지",
+        "title-en":"제목 영어로...",
+        "title-zh":"제목 중어로...",
+        "title-ko":"제목 조선어로...",
+        "goal":"목표",
+        "reach":"달성",
+        "content-en":"내용 영어로...",
+        "content-zh":"내용 중어로...",
+        "content-ko":"내용 조선어로...",
+        "submit":"보내기",
+        "label":"사진 선택하기",
+        "label2":"사진 삭제",
+        "buttonProject": "전체 프로젝트 보기"
+    },
+    "home":{
+        "heading":"홈페이지",
+        "earned":"총 수입: ",
+        "donationList":"기부 목록",
+        "latest":"최신순서",
+        "highest":"액수순서",
+        "header1":"이름",
+        "header2":"메일",
+        "header3":"기부 액수",
+        "header4":"기부 프로젝트",
+        "graph":"기부액수 선도형",
+        "project":{
+            "heading":"프로젝트 기부 순위",
+            "total":"총 기부 액수",
+            "created":"만든 날짜",
+            "1stRank":"기부금액 1위",
+            "2Rank":"2위",
+            "3Rank":"3위"
+        },
+        "news":{
+            "heading":"뉴스 보기 순위",
+            "total":"총 조회수",
+            "1stRank":"뉴스 조회수 1위"
+        }
+    }
+}

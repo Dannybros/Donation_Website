@@ -1,0 +1,20 @@
+#d3Chart_box {
+  background: white;
+  width: 75%;
+  margin: 40px auto;
+  padding-top: 10px;
+  h1 {
+    margin: 20px 0;
+  }
+  svg {
+    .x-lable {
+      font-size: 20px;
+    }
+    .y-lable {
+      font-size: 18px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      text-transform: uppercase;
+    }
+  }
+}

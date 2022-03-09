@@ -1,0 +1,78 @@
+{
+    "sign":{
+        "title": "欢迎！",
+        "username": "名字",
+        "password": "保密",
+        "button": "走进"
+    },
+    "news":{
+        "title":"新闻",
+        "error":"没有新闻， 请写新的新闻...",
+        "buttonCreate":"创造新的新闻",
+        "buttonProject":"走项目",
+        "del":"删除"
+    },
+    "news-form":{
+        "heading":"新闻 形式",
+        "title":"标题...",
+        "content":"内容...",
+        "submit":"提交",
+        "label":"点击选择图片",
+        "buttonNews": "去看都新闻"
+    },
+    "news_pagination":{
+        "first":"指数",
+        "prev": "后",
+        "next":"前",
+        "last":"结尾"
+    },
+    "project": {
+        "title": "项目",
+        "error":"没有项目, 请写新的 项目...",
+        "buttonCreate": "创建新项目",
+        "buttonNews": "走新闻",
+        "loading": "加载...",
+        "viewDetail":"查看详情",
+         "del":"删除"
+    },
+    "project-form":{
+        "heading":"项目形式",
+        "title-en":"标题 英语...",
+        "title-zh":"标题 汉语...",
+        "title-ko":"标题 朝鲜语...",
+        "goal":"目标",
+        "reach":"达到",
+        "content-en":"内容 英语...",
+        "content-zh":"内容 汉语...",
+        "content-ko":"内容 朝鲜语...",
+        "submit":"提交",
+        "label":"点击选择图片",
+        "label2":"删除图片",
+        "buttonProject": "去看都项目"
+    },
+    "home":{
+        "heading":"主页",
+        "earned":"总收入: ",
+        "donationList":"捐赠名单",
+        "latest":"最新名单",
+        "highest":"最高金额列表",
+        "header1":"姓名",
+        "header2":"电子邮件",
+        "header3":"捐款金额",
+        "header4":"捐赠项目",
+        "graph":"折线图捐赠流程",
+        "project":{
+            "heading":"项目捐赠排名",
+            "total":"捐赠总额",
+            "created":"创建日期",
+            "1stRank":"捐款金额排名第一",
+            "2Rank":"第二名",
+            "3Rank":"第三名"
+        },
+        "news":{
+            "heading":"新闻查看排名",
+            "total":"总浏览",
+            "1stRank":"新闻浏览量排名第一"
+        }
+    }
+}

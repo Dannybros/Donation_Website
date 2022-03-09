@@ -1,0 +1,95 @@
+/* cases all */
+
+.cases {
+  min-height: 100vh;
+  padding: 30px 0px;
+}
+.cases_h1 {
+  margin-top: 40px !important;
+}
+
+/* project form */
+
+.project_form-page {
+  min-height: 100vh;
+  padding: 30px 0px;
+  font-size: 35px;
+}
+.projectForm {
+  display: flex;
+  width: 80%;
+  margin: 30px auto 0px;
+  flex-direction: column;
+}
+
+form input,
+textarea {
+  padding: 10px;
+  font-size: 20px;
+  outline: 1px solid rgb(103, 103, 192);
+}
+form textarea {
+  height: 500px !important;
+}
+
+form input {
+  width: 33%;
+}
+
+.formGoal {
+  width: 20%;
+}
+form div {
+  width: 100%;
+  display: flex;
+}
+.imgSelector {
+  display: none;
+}
+form label,
+.clearImg {
+  background: rgb(206, 203, 203);
+  width: 30%;
+  height: 50px;
+  margin: 0 20px;
+  font-size: 20px;
+  border: 1px solid rgb(199, 197, 197);
+  outline: 1px solid rgb(103, 103, 192);
+  cursor: pointer;
+  padding: 10px 0;
+  color: rgb(29, 27, 27);
+  text-transform: capitalize;
+}
+form label:hover {
+  background: rgb(199, 255, 215);
+}
+
+.clearImg:hover {
+  color: white;
+  background: rgb(214, 73, 73);
+}
+
+form div img {
+  max-height: 400px;
+}
+
+.btnSubmit {
+  margin: 30px 10px;
+  padding: 20px;
+  color: white;
+  font-size: 30px;
+  background: rgb(22, 151, 119);
+  border: none;
+}
+.btnSubmit:hover {
+  background: rgb(25, 102, 83);
+}
+.btnChange {
+  border: none;
+  background: rgb(50, 54, 182);
+  font-size: 18px;
+  padding: 20px;
+  color: white;
+  width: 200px;
+  margin: 30px;
+}

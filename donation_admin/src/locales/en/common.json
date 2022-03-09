@@ -1,0 +1,74 @@
+{
+    "sign": {
+        "title": "Welcome!",
+        "username": "Username",
+        "password": "Password",
+        "button": "Login"
+    },
+    "news": {
+        "title": "All News",
+        "error": "No Data, Please Create New One...",
+        "buttonCreate": "Create News",
+        "buttonProject": "Go To Project",
+        "del": "Delete"
+    },
+    "news-form":{
+        "heading":"News Form",
+        "buttonNews": "Go To News"
+    },
+    "news_pagination": {
+        "first": "Index",
+        "prev": "Prev",
+        "next": "Next",
+        "last": "Last"
+    },
+    "project": {
+        "title": "All Projects",
+        "error":"No Data. Please Create New Ones...",
+        "buttonCreate": "Create New Project",
+        "buttonNews": "Go To News",
+        "loading": "Loading...",
+        "viewDetail":"View Detail",
+        "del":"Delete"
+    },
+    "project-form":{
+        "heading":"Project Form",
+        "title-en":"Title for English...",
+        "title-zh":"Title for Chinese...",
+        "title-ko":"Title for Korean...",
+        "goal":"Goal",
+        "reach":"Reached",
+        "content-en":"Content for English...",
+        "content-zh":"Content for Chinese...",
+        "content-ko":"Content for Korean...",
+        "submit":"Submit",
+        "label":"Click To Chooose Image",
+        "label2":"Clear Image",
+        "buttonProject": "Go To Project"
+    },
+    "home":{
+        "heading":"Home",
+        "earned":"Total Earned: ",
+        "donationList":"Donation List",
+        "latest":"Latest",
+        "highest":"Highest",
+        "header1":"Name",
+        "header2":"Email",
+        "header3":"Donation Amount",
+        "header4":"Donation To",
+        "graph":"Line Graph Donation Process",
+        "project":{
+            "heading":"Project Donation Ranking",
+            "total":"Total Donated",
+            "created":"Created",
+            "1stRank":"1st Ranking In Donation Amount",
+            "2Rank":"Second Rank",
+            "3Rank":"Third Rank"
+        },
+        "news":{
+            "heading":"News View Ranking",
+            "total":"Total Views",
+            "1stRank":"1st Ranking In News Views"
+        }
+    }
+}

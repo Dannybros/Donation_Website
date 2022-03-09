@@ -1,0 +1,138 @@
+.benefit_page {
+  background: #dce6b9;
+  padding: 50px;
+  min-height: 100vh;
+  h1 {
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 70%;
+      height: 3px;
+      background: black;
+    }
+  }
+  .top-header {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 30px;
+    padding: 20px;
+    border-bottom: 3px solid black;
+    button {
+      border: none;
+      padding: 20px 50px;
+      background: rgb(0, 109, 203);
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .eligible_donors {
+    width: 70%;
+    margin: auto;
+    .classification {
+      margin: 10px 0;
+      text-align: left;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          list-style: none;
+          font-size: 18px;
+          text-transform: capitalize;
+          margin: 0px 20px;
+          div:first-child {
+            width: 25px;
+            height: 25px;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: center;
+            margin-right: 10px;
+          }
+        }
+      }
+      select {
+        width: 150px;
+      }
+    }
+    table {
+      list-style: none;
+      border-collapse: collapse;
+      padding-left: 0;
+      border: 1px solid black;
+      margin: 25px 0;
+      width: 100%;
+      tr {
+        display: flex;
+        border-bottom: 1px solid black;
+        background: white;
+        &:last-child {
+          border: none;
+        }
+        &:nth-child(even) {
+          background: #dadada;
+        }
+        th {
+          background-color: #009879;
+          border-left: 1px solid black;
+          color: #ffffff;
+          text-align: left;
+          text-align: center;
+          font-size: 2em;
+          padding: 10px 0;
+          &:nth-child(1) {
+            width: 25%;
+            border: none;
+          }
+          &:nth-child(2) {
+            width: 30%;
+          }
+          &:nth-child(3) {
+            width: 20%;
+          }
+          &:nth-child(4) {
+            width: 25%;
+          }
+        }
+        td {
+          font-size: 20px;
+          padding: 20px 0;
+          border-left: 1px solid black;
+          &:nth-child(1) {
+            width: 25%;
+            border: none;
+          }
+          &:nth-child(2) {
+            width: 30%;
+          }
+          &:nth-child(3) {
+            width: 20%;
+          }
+          &:nth-child(4) {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+.palette-1 {
+  background: rgb(230, 117, 117);
+}
+.palette-2 {
+  background: rgb(170, 223, 140);
+}
