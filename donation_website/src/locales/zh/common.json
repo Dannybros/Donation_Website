@@ -25,6 +25,9 @@
             "title":"头条信息"
         }
     },
+    "Project":{
+        "title":"项目清单"
+    },
     "News":{
         "heading":"活动内容",
         "loading":"没有资讯",

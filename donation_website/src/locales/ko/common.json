@@ -25,6 +25,9 @@
             "title":"첫소식"
         }
     },
+    "Project":{
+        "title":"프로젝트 목록"
+    },
     "News":{
         "heading":"소식",
         "loading":"없음",

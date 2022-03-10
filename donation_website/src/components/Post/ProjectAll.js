@@ -38,7 +38,7 @@ function DonationPage() {
     return (
         <div className="donation_discover">
             <Helmet>
-            <title>Projects - Discover</title>
+            <title>{t('Project.title')}</title>
             </Helmet>
             {bg&&
                 <>

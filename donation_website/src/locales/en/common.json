@@ -24,6 +24,9 @@
             "title":"Top News"
         }
     },
+    "Project":{
+        "title":"Projects - Discover"
+    },
     "News":{
         "heading":"News",
         "loading":"No Data",
