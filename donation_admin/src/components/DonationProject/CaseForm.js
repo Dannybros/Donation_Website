@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from '../backendSiteName'
 import { useTranslation } from 'react-i18next';
 
-const intialValue={
+const initialValue={
     title:{
         en:"",
         zh:"",
@@ -27,8 +27,8 @@ function CaseForm() {
 
     const {t}= useTranslation('translation')
     
-    const [imgfiles, setImgFiles]=useState([]);
-    const [formData, setFormData] = useState(intialValue);
+    const [imgFiles, setImgFiles]=useState([]);
+    const [formData, setFormData] = useState(initialValue);
 
     const hiddenFileInput = useRef(null);
 
@@ -196,14 +196,14 @@ function CaseForm() {
                       {t('project-form.label')}
                     </label>
 
-                    {!imgfiles.length<=0 &&
+                    {!imgFiles.length<=0 &&
                         <label onClick={handleClearImg} className="clearImg">
                         {t('project-form.label2')}
                         </label>
                     }
                 </div>
                 <Row>
-                    {imgfiles.map((img)=>{
+                    {imgFiles.map((img)=>{
                         return(
                         <Col lg={3} md={6} style={{margin:'20px'}} key={img}>
                             <img src={img} alt="" style={{width:'100%'}}/>

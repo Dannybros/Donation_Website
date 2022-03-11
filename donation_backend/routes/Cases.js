@@ -3,6 +3,7 @@ import CaseCollection from '../models/CaseModel.js'
 import projImg from '../middlewares/ProjImg.js'
 import auth from '../middlewares/auth.js'
 import * as fs from 'fs';
+import { storage } from '../firebase/index.js';
 
 const router = express.Router();
 
@@ -70,15 +71,9 @@ router.post('/update', (req, res)=>{
     })
 })
 
-router.post('/', auth, projImg.array('img'), async(req, res)=>{
+//projImg.array('img'),
+router.post('/', auth,  async(req, res)=>{
 
-    const files = req.files;
-
-     const imgArray = files.map((file)=>{
-        let img = file.path;
-
-        return img;
-    })
 
     if(req.body.titleEn==="" || req.body.titleZh==="" || req.body.titleKo==="" || req.body.goal ==="" || req.body.contentEn==="" ||
     req.body.contentZh==="" ||req.body.contentKo==="" ){
@@ -86,6 +81,28 @@ router.post('/', auth, projImg.array('img'), async(req, res)=>{
         res.status(500).json({message:"fill in all the input"})
         
     }else{
+        
+        const files = req.files;
+
+        const imgArray = files.map((file)=>{
+
+            const uploadTask = storage.ref(`images/${file.name}`).put(file);
+            uploadTask.on(
+                "state_changed",
+                snapshot => {},
+                error=>{
+                    console.log(error);
+                },
+                ()=>{
+                    storage
+                     .ref("images")
+                     .child(file.name)
+                     .getDownloadURL()
+                     .then(url=>{ return url;})
+                }
+            )
+
+        })
         
         var DBobj = {
             title:{
