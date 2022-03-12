@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL:'https://donationdata.herokuapp.com', //https://donationdata.herokuapp.com
+    baseURL:'http://localhost:8000', //https://donationdata.herokuapp.com
 })
 
 instance.interceptors.request.use((req)=>{
@@ -12,4 +12,4 @@ instance.interceptors.request.use((req)=>{
 })
 
 export default instance;
-export const url = "https://donationdata.herokuapp.com/";  //https://donationdata.herokuapp.com/
+export const url = "http://localhost:8000/";  //https://donationdata.herokuapp.com/

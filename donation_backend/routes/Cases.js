@@ -2,8 +2,9 @@ import express from 'express'
 import CaseCollection from '../models/CaseModel.js'
 import projImg from '../middlewares/ProjImg.js'
 import auth from '../middlewares/auth.js'
-import * as fs from 'fs';
-import { storage } from '../firebase/index.js';
+import { uploadFile } from '../firebase/index.js';
+import { storage } from '../firebase/firebase.js';
+import { ref, getDownloadURL } from "firebase/storage";
 
 const router = express.Router();
 
@@ -71,12 +72,11 @@ router.post('/update', (req, res)=>{
     })
 })
 
-//projImg.array('img'),
-router.post('/', auth,  async(req, res)=>{
 
+router.post('/', auth, projImg.array('img'), async(req, res)=>{ 
 
     if(req.body.titleEn==="" || req.body.titleZh==="" || req.body.titleKo==="" || req.body.goal ==="" || req.body.contentEn==="" ||
-    req.body.contentZh==="" ||req.body.contentKo==="" ){
+    req.body.contentZh==="" ||req.body.contentKo===""){
 
         res.status(500).json({message:"fill in all the input"})
         
@@ -84,23 +84,11 @@ router.post('/', auth,  async(req, res)=>{
         
         const files = req.files;
 
-        const imgArray = files.map((file)=>{
 
-            const uploadTask = storage.ref(`images/${file.name}`).put(file);
-            uploadTask.on(
-                "state_changed",
-                snapshot => {},
-                error=>{
-                    console.log(error);
-                },
-                ()=>{
-                    storage
-                     .ref("images")
-                     .child(file.name)
-                     .getDownloadURL()
-                     .then(url=>{ return url;})
-                }
-            )
+        const imgArray = files.map((file)=>{
+            
+            let img = file.path
+            return img;
 
         })
         
@@ -129,6 +117,30 @@ router.post('/', auth,  async(req, res)=>{
             }
         })
     }
+})
+
+router.post('/test', projImg.array('img'), async(req, res)=>{
+
+    const files = req.files;
+    files.map(async (file) =>{
+        try {
+            await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
+            
+            getDownloadURL(ref(storage, `images/${file.filename}`))
+            .then((url)=>{
+                console.log(url);
+            });
+
+            console.log(ff);
+        } catch (error) {
+            console.log (error)
+            res.status(400).send(error.message);
+        }
+    })
+})
+
+router.post('/test2', projImg.array('img'), async(req, res)=>{
+    
 })
 
 export default router;
