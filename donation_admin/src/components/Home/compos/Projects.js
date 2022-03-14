@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import axios, {url} from '../../backendSiteName'
+import axios from '../../backendSiteName'
 import Item from '../../DonationProject/Carousal/Item'
 import '../Home.scss'
 import {Row, Col} from 'react-bootstrap';
@@ -31,7 +31,7 @@ function Projects() {
                             des={data[1].content } 
                             goal={data[1]?.goal} 
                             current={data[1]?.reach} 
-                            img = {url + data[1].img[0]}
+                            img = {data[1].img[0]}
                             del    
                         />
                     </Col>
@@ -43,7 +43,7 @@ function Projects() {
                             des={data[2].content} 
                             goal={data[2]?.goal} 
                             current={data[2]?.reach} 
-                            img = {url + data[2].img[0]}
+                            img = {data[2].img[0]}
                             del
                         />
                     </Col>
@@ -68,7 +68,7 @@ function Projects() {
 
                     </div>
                     <div className="first___item">
-                        <img src ={url + projs[0]?.img[0]} alt=""/>
+                        <img src ={projs[0]?.img[0]} alt=""/>
 
                         <h3>{projs[0]?.title[i18n.language]}</h3>
 

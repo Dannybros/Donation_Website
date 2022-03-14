@@ -3,7 +3,6 @@ import './Item.css'
 import {useHistory} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../../i18n'
-import {url} from '../../backendSiteName'
 
 function Item({img, title, des, goal, current, id, del, delClicked}) {
 
@@ -27,7 +26,7 @@ function Item({img, title, des, goal, current, id, del, delClicked}) {
 
     return (
         <div className="box__item" >
-            <img src={url+img[0]} className="imgItem" alt="" onClick={goToDetail}/>
+            <img src={img[0]} className="imgItem" alt="" onClick={goToDetail}/>
             <div className="item__info" onClick={goToDetail}>
                 <div className="item__title">
                     {title[i18n.language]}

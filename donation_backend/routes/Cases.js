@@ -5,6 +5,7 @@ import auth from '../middlewares/auth.js'
 import { uploadFile } from '../firebase/index.js';
 import { storage } from '../firebase/firebase.js';
 import { ref, getDownloadURL } from "firebase/storage";
+import { async } from '@firebase/util';
 
 const router = express.Router();
 
@@ -84,13 +85,21 @@ router.post('/', auth, projImg.array('img'), async(req, res)=>{
         
         const files = req.files;
 
-
-        const imgArray = files.map((file)=>{
-            
-            let img = file.path
-            return img;
-
-        })
+        const imgList =await Promise.all(files.map(async(file)=>{
+            try {
+                await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
+        
+                return getDownloadURL(ref(storage, `images/${file.filename}`))
+                .then((url)=>{
+                    const string = url;
+                    return string;
+                });
+                
+            } catch (error) {
+                console.log (error)
+                res.status(400).send(error.message);
+            }
+        }))
         
         var DBobj = {
             title:{
@@ -105,7 +114,7 @@ router.post('/', auth, projImg.array('img'), async(req, res)=>{
                 zh:req.body.contentZh,
                 ko:req.body.contentKo
             },
-            img:imgArray
+            img:imgList
         }
     
         await CaseCollection.create(DBobj, (err, data)=>{
@@ -122,21 +131,40 @@ router.post('/', auth, projImg.array('img'), async(req, res)=>{
 router.post('/test', projImg.array('img'), async(req, res)=>{
 
     const files = req.files;
-    files.map(async (file) =>{
+    // files.map(async (file) =>{
+    //     try {
+    //         await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
+            
+    //         getDownloadURL(ref(storage, `images/${file.filename}`))
+    //         .then((url)=>{
+    //             let string = url;
+    //             imgList.push(string);
+    //         });
+
+    //     } catch (error) {
+    //         console.log (error)
+    //         res.status(400).send(error.message);
+    //     }
+    // })
+
+    const imgList =await Promise.all(files.map(async(file)=>{
         try {
             await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
-            
-            getDownloadURL(ref(storage, `images/${file.filename}`))
+    
+            return getDownloadURL(ref(storage, `images/${file.filename}`))
             .then((url)=>{
-                console.log(url);
+                const string = url;
+                return string;
             });
-
-            console.log(ff);
+            
         } catch (error) {
             console.log (error)
             res.status(400).send(error.message);
         }
-    })
+    }))
+
+    res.send(imgList)
+
 })
 
 router.post('/test2', projImg.array('img'), async(req, res)=>{

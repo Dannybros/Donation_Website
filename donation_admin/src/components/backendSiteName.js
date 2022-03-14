@@ -12,4 +12,3 @@ instance.interceptors.request.use((req)=>{
 })
 
 export default instance;
-export const url = "http://localhost:8000/";  //https://donationdata.herokuapp.com/

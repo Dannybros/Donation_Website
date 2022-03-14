@@ -4,7 +4,7 @@ import {Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useHistory, useParams} from 'react-router-dom'
 import CircleLoader from "react-spinners/CircleLoader";
-import axios, {url} from '../backendSiteName'
+import axios from '../backendSiteName'
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
 
@@ -72,7 +72,7 @@ function NewsDetail() {
                                 return(
                                     <>
                                         <Col lg={3} md={6} >
-                                            <img src={url + item} alt="" className="newsImage"/>
+                                            <img src={item} alt="" className="newsImage"/>
                                         </Col>
                                     </>
                                 )

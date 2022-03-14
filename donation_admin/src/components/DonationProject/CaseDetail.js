@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import './CaseDetail.scss'
-import axios, {url} from '../backendSiteName'
+import axios from '../backendSiteName'
 import i18n from '../../i18n'
 import { useTranslation } from 'react-i18next'
 
@@ -11,7 +11,7 @@ function CaseDetail() {
 
     const {t} = useTranslation();
 
-    const imgArry = [];
+    const imgArray = [];
 
     const {id} = useParams();
 
@@ -39,7 +39,7 @@ function CaseDetail() {
 
     const addImg =(data)=>{
         for(var i=1; i<data?.length; i++){
-            imgArry.push(url+(data[i]))
+            imgArray.push(data[i])
         }
     }
 
@@ -57,7 +57,7 @@ function CaseDetail() {
         }
 
         let array =[];
-        const NumImg = imgArry?.length;
+        const NumImg = imgArray?.length;
         const para = content?.match( /[^\\.!\\?]+[\\.!\\?]+/g );
         const paraLength = para?.length;
         const totalSection = parseInt(paraLength / NumImg) + 1;
@@ -72,7 +72,7 @@ function CaseDetail() {
                         ))}
                     </div>
                     <div className="img-box">
-                        <img src={imgArry[index]} alt=""/>
+                        <img src={imgArray[index]} alt=""/>
                     </div>
                 </div>
             )
@@ -89,7 +89,7 @@ function CaseDetail() {
 
     return (
         <div className="caseDetail">
-            <img alt="" src={url+data?.img[0]} className="mainImg"/>
+            <img alt="" src={data?.img[0]} className="mainImg"/>
             <h1>
                 {data?.title[i18n.language]}
                 {t(' ')}

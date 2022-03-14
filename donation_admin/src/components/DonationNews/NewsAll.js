@@ -5,7 +5,7 @@ import {Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pagination from './Pagination/Pagination';
 import './News.scss'
-import axios, { url } from '../backendSiteName';
+import axios from '../backendSiteName';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n'
 
@@ -41,7 +41,7 @@ function NewsAll() {
             <Col id={newsid} className="news_list_shadow" >
                 <h1>{title[i18n.language]}</h1>
                 <div className="news_list_item">
-                    <img src={url + img[0]} alt="news-item-img" onClick={()=>history.push(`/news-detail/${_id}`)}/>
+                    <img src={img[0]} alt="news-item-img" onClick={()=>history.push(`/news-detail/${_id}`)}/>
                     <div className="news_item_info" onClick={()=>history.push(`/news-detail/${_id}`)}>
                         <div>
                             {content[i18n.language]}

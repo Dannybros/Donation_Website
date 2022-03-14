@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import axios, {url} from '../../backendSiteName'
+import axios from '../../backendSiteName'
 import {Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Home.scss'
@@ -22,7 +22,7 @@ function News() {
         return(
             <div className="TopNews-item">
                 <div className="topNews-img-box">
-                    <img src={url + img} alt=""/> 
+                    <img src={img} alt=""/> 
                 </div>
                 <h5>{title[i18n.language]}</h5>
                 <p>
