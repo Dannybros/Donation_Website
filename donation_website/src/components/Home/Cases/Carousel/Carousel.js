@@ -1,7 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Item from "./Item";
-import {url} from '../../../../axios/axios'
 
 const Simple = ({ deviceType, data }) => {
   let DeskShowItem =0;
@@ -54,7 +53,7 @@ const Simple = ({ deviceType, data }) => {
             current={item.reach} 
             goal={item.goal} 
             des={item.content} 
-            img={url + item.img[0]} 
+            img={item.img[0]} 
             id={item._id}/>
         )
       })}

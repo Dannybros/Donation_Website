@@ -5,4 +5,3 @@ const instance = axios.create({
 })
 
 export default instance
-export const url = 'http://localhost:8000/' //http://localhost:8000

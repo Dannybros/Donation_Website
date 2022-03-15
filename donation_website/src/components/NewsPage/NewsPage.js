@@ -3,7 +3,7 @@ import './newsPage.scss'
 import {Row, Col} from 'react-bootstrap';
 import Pagination from './Pagination';
 import {useHistory} from 'react-router-dom'
-import axios, {url} from '../../axios/axios'
+import axios from '../../axios/axios'
 import { useStateValue } from '../../Reducer/StateProvider';
 import { useTranslation } from 'react-i18next';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -24,7 +24,7 @@ function NewsPage() {
         return(
             <Col className="news_list_shadow" fluid="true" onClick={()=>history.push(`/news/detail/${_id}`)}>
                 <div className="news_list_item">
-                    <img src={url + img[0]} alt=""/>
+                    <img src={img[0]} alt=""/>
                     <div className="news_item_info">
                         <h5>{title[i18n.language]}</h5>
                         <div>{content[i18n.language]}</div>
@@ -80,7 +80,7 @@ function NewsPage() {
                                     return(
                                         <div className="TopNews-item" key={item._id}>
                                             <div className="topNews-img-box">
-                                                <img src={url + item.img[0]} alt=""/>
+                                                <img src={item.img[0]} alt=""/>
                                             </div>
                                             <h5 onClick={()=>history.push(`/news/detail/${item._id}`)}>
                                                 {item.title[i18n.language]}

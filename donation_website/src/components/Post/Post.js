@@ -4,7 +4,7 @@ import {Spinner} from 'react-bootstrap';
 import SyncIcon from '@mui/icons-material/Sync';
 import PaymentIcon from '@mui/icons-material/Payment';
 import {useHistory, useParams} from 'react-router-dom'
-import axios, {url} from '../../axios/axios';
+import axios from '../../axios/axios';
 import { useTranslation } from 'react-i18next';
 import ShadyBG from '../Donation/ShadyBG';
 import Donation2 from  '../Donation/Payment/Donation2';
@@ -57,7 +57,7 @@ function Post() {
 
     const addImg=()=>{
         for(var k=1; k<data?.img.length; k++){
-            imgArr.push(url+data.img[k])
+            imgArr.push(data.img[k])
         }
     }
     
@@ -128,7 +128,7 @@ function Post() {
                     {/* all the news and blog content */}
 
                         {/* blog title and main image */}
-                        <img src={url + data?.img[0]} className="mainImg" alt="main"/>
+                        <img src={data?.img[0]} className="mainImg" alt="main"/>
                         <h1 className="post_title">
                             {data?.title[i18n.language]}
                         </h1>
@@ -193,7 +193,7 @@ function Post() {
                         {promoImg.map((item)=>{
                             return(
                                 <div className='adsItemBox mt-5' key={item}>
-                                    <img src={url+"project-image/promo-image/"+item} alt=""/>
+                                    <img src={item} alt=""/>
                                     <p>{getImgName(item)}</p>
                                 </div>
                             )

@@ -4,7 +4,6 @@ import {Row, Col} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom'
 import {useStateValue } from '../../../Reducer/StateProvider';
 import EventNoteIcon from '@mui/icons-material/EventNote';
-import {url} from '../../../axios/axios'
 import {useTranslation} from "react-i18next";
 
 function News(props) {
@@ -29,7 +28,7 @@ function News(props) {
                         return(
                             <Col xs={6} md={6} lg={4} key={item._id}>
                                 <div className="news_box">
-                                    <img alt="" src={url + item.img[0]}/>
+                                    <img alt="" src={item.img[0]}/>
                                     <h5 onClick={()=>history.push(`/news/detail/${item._id}`)}>{item.title[i18n.language]}</h5>
                                     <p><EventNoteIcon/><span>{item.date.split('T')[0]}</span></p>
                                 </div>

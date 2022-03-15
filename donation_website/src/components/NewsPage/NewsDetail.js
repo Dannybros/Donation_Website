@@ -4,7 +4,7 @@ import {Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useStateValue } from '../../Reducer/StateProvider';
 import {useParams, useHistory} from 'react-router-dom';
-import axios, {url} from '../../axios/axios'
+import axios from '../../axios/axios'
 import { useTranslation } from 'react-i18next';
 import {Helmet} from 'react-helmet-async'
 
@@ -108,7 +108,7 @@ function NewsDetail() {
                     {document?.img.map((item)=>{
                         return(
                             <Col lg={4} md={6} xs={12} key={item}>
-                                <img src={url + item} alt=""/>
+                                <img src={item} alt=""/>
                             </Col>
                         )
                     })}

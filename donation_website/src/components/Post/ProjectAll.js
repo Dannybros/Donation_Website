@@ -3,7 +3,7 @@ import './ProjectAll.scss'
 import {Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import hero from '../../img/hero.jpg'
-import axios, {url} from '../../axios/axios'
+import axios from '../../axios/axios'
 import { useTranslation } from 'react-i18next';
 import Donation2 from  '../Donation/Payment/Donation2';
 import ShadyBG from '../Donation/ShadyBG';
@@ -130,7 +130,7 @@ function DonationPage() {
                                     current={item.reach} 
                                     goal={item.goal} 
                                     des={item.content} 
-                                    img={url + item.img[0]} 
+                                    img={item.img[0]} 
                                     id={item._id}
                                 />
                             </Col>
