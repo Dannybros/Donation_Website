@@ -3,6 +3,9 @@ import NewsCollection from '../models/NewsModel.js';
 import mongoose from 'mongoose';
 import newsImg from '../middlewares/news.js';
 import auth from '../middlewares/auth.js';
+import { uploadFile } from '../firebase/index.js';
+import { storage } from '../firebase/firebase.js';
+import { ref, getDownloadURL, deleteObject } from "firebase/storage";
 
 const router = express.Router();
 
@@ -39,6 +42,16 @@ router.post('/view', (req, res)=>{
 
 router.post('/delete/:id', auth, async(req, res)=>{
     const id = req.params.id;
+    const img = req.body;
+
+    await img.map((file)=>{
+        try {
+            deleteObject(ref(storage, `${file}`))
+        } catch (error) {
+            console.log(error);
+            res.status(400).send(error.message);
+        }
+    })
 
     NewsCollection.find({_id: id}, (err, data)=>{
         if(err){
@@ -72,15 +85,21 @@ router.post('/', auth, newsImg.array('img', 10), async(req, res)=>{
         
         const files = req.files;
 
-        const imgArray = files.map((file)=>{
-
-        // this is for storing binary image to database and import fs
-            // let img = fs.readFileSync(file.path)
-            // return img.toJSON();
-
-            let img = file.path
-            return img;
-        })
+        const imgArray =await Promise.all(files.map(async(file)=>{
+            try {
+                await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
+        
+                return getDownloadURL(ref(storage, `images/${file.filename}`))
+                .then((url)=>{
+                    const string = url;
+                    return string;
+                });
+                
+            } catch (error) {
+                console.log (error)
+                res.status(400).send(error.message);
+            }
+        }))
 
         const news = new NewsCollection({
             _id: new mongoose.Types.ObjectId(),

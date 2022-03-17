@@ -4,8 +4,7 @@ import projImg from '../middlewares/ProjImg.js'
 import auth from '../middlewares/auth.js'
 import { uploadFile } from '../firebase/index.js';
 import { storage } from '../firebase/firebase.js';
-import { ref, getDownloadURL } from "firebase/storage";
-import { async } from '@firebase/util';
+import { ref, getDownloadURL, deleteObject } from "firebase/storage";
 
 const router = express.Router();
 
@@ -49,6 +48,15 @@ router.get('/get/:id', (req, res)=>{
 router.post('/delete/:id', auth, async(req, res)=>{
     const id = req.params.id;
     const img = req.body;
+
+    await img.map((file)=>{
+        try {
+            deleteObject(ref(storage, `${file}`))
+        } catch (error) {
+            console.log(error);
+            res.status(400).send(error.message);
+        }
+    })
 
     CaseCollection.findByIdAndDelete({_id: id},({new:true}), (err, data)=>{
         if(err){
@@ -128,47 +136,5 @@ router.post('/', auth, projImg.array('img'), async(req, res)=>{
     }
 })
 
-router.post('/test', projImg.array('img'), async(req, res)=>{
-
-    const files = req.files;
-    // files.map(async (file) =>{
-    //     try {
-    //         await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
-            
-    //         getDownloadURL(ref(storage, `images/${file.filename}`))
-    //         .then((url)=>{
-    //             let string = url;
-    //             imgList.push(string);
-    //         });
-
-    //     } catch (error) {
-    //         console.log (error)
-    //         res.status(400).send(error.message);
-    //     }
-    // })
-
-    const imgList =await Promise.all(files.map(async(file)=>{
-        try {
-            await uploadFile(`${file.destination}${file.filename}`, `images/${file.filename}`);
-    
-            return getDownloadURL(ref(storage, `images/${file.filename}`))
-            .then((url)=>{
-                const string = url;
-                return string;
-            });
-            
-        } catch (error) {
-            console.log (error)
-            res.status(400).send(error.message);
-        }
-    }))
-
-    res.send(imgList)
-
-})
-
-router.post('/test2', projImg.array('img'), async(req, res)=>{
-    
-})
 
 export default router;

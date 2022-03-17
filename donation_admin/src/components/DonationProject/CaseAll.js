@@ -17,15 +17,6 @@ function CaseAll() {
     const [loading, setLoading] = useState(false);
     const [refresh, setRefresh] = useState();
 
-    // // convert array of buffer to base64
-    // const arrayBufferToBase64 = (buffer)=>{
-    //     var binary = '';
-    //     var bytes = [].slice.call(new Uint8Array(buffer));
-    //     bytes.forEach((b)=> binary += String.fromCharCode(b));
-
-    //     const imgString = 'data:image/jpeg;base64,' + window.btoa(binary)
-    //     return imgString
-    // }
     const deleteItem = async (id, img) => {
         await axios.post(`/cases/delete/${id}`, img)
         .then(res=>{

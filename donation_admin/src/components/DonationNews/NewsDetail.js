@@ -39,17 +39,8 @@ function NewsDetail() {
         
     }, [id, history])
 
-    // const arrayBufferToBase64 = (buffer)=>{
-    //     var binary = '';
-    //     var bytes = [].slice.call(new Uint8Array(buffer));
-    //     bytes.forEach((b)=> binary += String.fromCharCode(b));
-
-    //     const imgString = 'data:image/jpeg;base64,' + window.btoa(binary)
-    //     return imgString
-    // }
-
     const delNews = ()=>{
-        axios.post(`/news/delete/${id}`)
+        axios.post(`/news/delete/${id}`, data.img)
         .then(res=>{
             alert(res.data.msg);
             history.replace('/news')
