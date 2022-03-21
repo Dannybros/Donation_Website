@@ -1,5 +1,4 @@
 .news_detail_page {
-  font-family: "Times New Roman";
   position: relative;
 }
 .news_detail_top {
@@ -24,7 +23,7 @@
 .news_detail_top h2 {
   padding: 20px;
   color: white;
-  font-family: bold;
+  font-weight: bold;
   text-transform: capitalize;
   user-select: none;
   margin: 0;

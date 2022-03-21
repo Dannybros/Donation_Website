@@ -1,5 +1,4 @@
 .news_detail_page {
-  font-family: "Times New Roman";
   width: 100%;
   min-height: 100vh;
   padding: 30px 0;
@@ -10,7 +9,7 @@
   margin-bottom: 30px;
   font-size: 40px;
   color: #fff;
-  font-family: bold;
+  font-weight: bold;
   text-transform: capitalize;
   background: rgb(29, 149, 210);
 }

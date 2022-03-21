@@ -15,7 +15,6 @@ $phone: 500px;
       width: 300px;
       padding: 15px;
       font-size: 30px;
-      font-family: "Times New Roman";
       font-weight: bold;
       box-shadow: 0 1px 4px rgb(0 0 0 / 30%), 0 0 40px rgb(0 0 0 / 10%) inset;
       margin-bottom: 20px;
@@ -126,7 +125,6 @@ $phone: 500px;
           justify-content: space-evenly;
           margin: 20px;
           font-size: 25px;
-          font-family: "Times New Roman", "Times, serif";
           font-weight: bold;
           @media screen and (max-width: $tablet) {
             justify-content: start;

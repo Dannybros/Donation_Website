@@ -3,7 +3,6 @@ import './Footer.scss'
 import {Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../img/logo/Relogo2.png'
-import { url } from '../../axios/axios';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { useStateValue } from '../../Reducer/StateProvider';
@@ -77,7 +76,7 @@ function Footer() {
                                 {news.map((item)=>{
                                     return(
                                         <li key={item._id} onClick={()=>history.push(`/news/detail/${item._id}`)}>
-                                            <img src={url + item.img[0]} alt=""/>
+                                            <img src={item.img[0]} alt=""/>
                                             <div>
                                                 <p> {item.title[i18n.language]}</p>
                                                 <span>{item.date.split('T')[0]}</span>

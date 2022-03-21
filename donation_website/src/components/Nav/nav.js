@@ -6,9 +6,12 @@ import SideBar from './SideBar/SideBar';
 import Backdrop from './Backdrop/Backdrop';
 import {useHistory, NavLink} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+import { useStateValue } from '../../Reducer/StateProvider';
+
 function Nav() {
 
     const history = useHistory();
+    const [{language}, dispatch] = useStateValue();
 
     const {t, i18n} = useTranslation();
     const [isToggleOpen, setIsToggleOpen] = useState(false);
@@ -21,19 +24,21 @@ function Nav() {
     }
     const changeLang=(e)=>{
         const lng = e.target.value;
+        dispatch({
+            type:'Set_Lang',
+            lang: lng,
+        });
         localStorage.setItem('lang', lng);
         i18n.changeLanguage(lng)
     }
 
     const goToAboutUs=()=>{
-        // history.push('/aboutus');
         localStorage.setItem('about', 'OverView')
     }
 
-    const lang = localStorage.getItem('lang')
+    const lang = localStorage.getItem('lang');
 
     return (
-        // benefits
         <div className="nav">
             <img src={logo} className="logoImg" alt="logo" onClick={()=>history.replace('/')}/>
             <ul className="nav-list">
@@ -64,7 +69,7 @@ function Nav() {
                 </li>
                 
             </ul>
-            <div className="LangSelector-box">
+            <div className="LangSelector-box" key ={language}>
                 <select className="LangSelector" value={lang? lang: "en"} onChange={changeLang}>
                     <option value="en" >English</option>
                     <option value="zh" >中文</option>

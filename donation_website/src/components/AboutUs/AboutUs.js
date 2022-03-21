@@ -50,7 +50,7 @@ function AboutUs() {
                     <Helmet>
                         <title>About Us - {t('About_Us.tab1.title')}</title>
                     </Helmet>
-                    {breakText(`${t('About_Us.tab1.para')}`, 4)}
+                    {breakText(`${t('About_Us.tab1.para')}`, 2)}
                 </div> 
                 <div label={t('About_Us.tab3.title')} > 
                     <Helmet>

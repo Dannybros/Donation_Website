@@ -39,7 +39,7 @@ function Post() {
                     .then(res=>setData(res.data[0]))
                     .catch(err=>history.push('/*'))
                 
-                await axios.get(`/promo/images/4`)
+                await axios.get(`https://donationbackendweb.herokuapp.com/promo/images/4`)
                     .then(res=>setPromoImg(res.data))
                     .catch(err=>console.log(err))
     
@@ -117,7 +117,6 @@ function Post() {
             <>
             {bg&&
                 <>
-                {/* <Donation name={data?.title} id={id} click={()=>setBg(false)}/> */}
                 <Donation2 name={data?.title} click={closeDonation}/>
                 <ShadyBG click={()=>setBg(false)}/>
                 </>
@@ -193,7 +192,7 @@ function Post() {
                         {promoImg.map((item)=>{
                             return(
                                 <div className='adsItemBox mt-5' key={item}>
-                                    <img src={item} alt=""/>
+                                    <img src={"https://donationbackendweb.herokuapp.com/project-image/promo-image/"+item} alt=""/>
                                     <p>{getImgName(item)}</p>
                                 </div>
                             )

@@ -19,7 +19,11 @@ function HeroBoot() {
                 style={{backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img1})`}}
             >
                 <Carousel.Caption className="hero__msg">
-                    {t('Home.Hero.heading')}
+                    <h1 style={{marginBottom: "10px !important"}}>
+                        {t('Home.Hero.heading1.1')}
+                        <div style={{height:"20px"}}/>
+                        {t('Home.Hero.heading1.2')}
+                    </h1>
                     <p className="hero__msg_tag">
                         {t('Home.Hero.heading2')}
                     </p>
@@ -38,7 +42,12 @@ function HeroBoot() {
                 style={{backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img2})`}}
             >
                 <Carousel.Caption className='hero__msg'>
-                    {t('Home.Hero.heading')}
+                    <h1 style={{marginBottom: "10px !important"}}>
+                        {t('Home.Hero.heading1.1')}
+                    </h1>
+                    <h1>
+                        {t('Home.Hero.heading1.2')}
+                    </h1>
                     <p className="hero__msg_tag">
                         {t('Home.Hero.heading2')}
                     </p>

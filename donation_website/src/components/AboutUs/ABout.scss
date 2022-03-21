@@ -3,7 +3,6 @@ $tablet: 768px;
 
 h1 {
   margin: 40px 0;
-  font-family: "Times New Roman";
   font-weight: bold;
   @media screen and (max-width: $tablet) {
     margin: 20px 0;
@@ -33,7 +32,6 @@ h1 {
   font-size: 20px;
   letter-spacing: 1px;
   line-height: 50px;
-  font-family: "Times New Roman";
   text-align: left;
   padding-top: 40px;
   @media screen and (max-width: $phone) {
@@ -57,7 +55,6 @@ h1 {
     margin: 0 10px;
     text-align: left;
     p {
-      font-family: "Times New Roman";
       font-size: 20px;
       text-indent: 10px;
       color: #222;

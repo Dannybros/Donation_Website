@@ -64,8 +64,8 @@
   font-weight: bold;
   padding: 10px 20px;
   margin: 0px 5px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", */
+    /* "Lucida Sans", Arial, sans-serif; */
   white-space: nowrap;
   text-decoration: none;
   color:black;
