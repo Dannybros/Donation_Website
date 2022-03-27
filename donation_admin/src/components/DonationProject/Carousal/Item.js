@@ -26,7 +26,7 @@ function Item({img, title, des, goal, current, id, del, delClicked}) {
 
     return (
         <div className="box__item" >
-            <img src={img[0]} className="imgItem" alt="" onClick={goToDetail}/>
+            <img src={img} className="imgItem" alt="" onClick={goToDetail}/>
             <div className="item__info" onClick={goToDetail}>
                 <div className="item__title">
                     {title[i18n.language]}

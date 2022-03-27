@@ -43,7 +43,7 @@ function News() {
             <h1>{t('home.news.heading')}</h1>
             <section className="first_place_section">
                 <div className="first___item">
-                    <img src ="https://picsum.photos/200" alt=""/>
+                    <img src ={news[0]?.img[0]} alt=""/>
                     <h3>
                         {news[0]?.title[i18n.language]}
                     </h3>

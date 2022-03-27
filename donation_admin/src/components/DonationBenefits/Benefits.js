@@ -29,15 +29,15 @@ function Benefits() {
         let holder = {};
 
         arr.map((item)=>{
-            const Holdername = item.cardName+"-"+ item.email
-            !holder.hasOwnProperty(Holdername)? 
-                holder[Holdername] = {
+            const HolderName = item.cardName+"-"+ item.email
+            !holder.hasOwnProperty(HolderName)? 
+                holder[HolderName] = {
                     name: item.name,
                     email: item.email,
                     amount: item.amount,
                 }
             :
-                holder[Holdername].amount = item.amount
+                holder[HolderName].amount = item.amount
 
             return null
         })
@@ -51,23 +51,27 @@ function Benefits() {
     }
 
     const getLevel = (num) =>{
-        let classname;
+        let color_class;
         let level;
 
-        if(num <= 30){
+        if(num <= 500){
             level = null;
-            classname="palette-1";
+            color_class="palette-1";
         }
-        else if(num > 30 && num <= 40){
+        else if(num > 500 && num <= 2000){
             level = 1;
-            classname="palette-2";
+            color_class="palette-2";
         }
-        else if(num > 40){
+        else if(num > 2000 && num <= 5000){
             level = 2;
-            classname="palette-2";
+            color_class="palette-2";
+        }
+        else if(num > 5000){
+            level = 3;
+            color_class="palette-2";
         }
 
-        return (<td className={classname}>{level}</td>)
+        return (<td className={color_class}>{level}</td>)
     }
 
     const sortingData=(data)=>{
@@ -111,15 +115,15 @@ function Benefits() {
                         </li>
                         <li>
                             <div className="palette-2">1</div>
-                            <span>no e</span>
+                            <span>Share to Magazine</span>
                         </li>
                         <li>
                             <div className="palette-2">2</div>
-                            <span>alakjsdhfahfklalalskdjfh</span>
+                            <span>Korean Specialty Gifts</span>
                         </li>
                         <li>
                             <div className="palette-2">3</div>
-                            <span>alakjsdhfahfklalalskdjfh</span>
+                            <span>Travel To North Korea</span>
                         </li>
                     </ul>
                     <select onChange={(e)=>setSort(e.target.value)}>
