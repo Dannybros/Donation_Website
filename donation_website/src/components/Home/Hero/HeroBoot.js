@@ -20,8 +20,6 @@ function HeroBoot() {
             >
                 <Carousel.Caption className="hero__msg">
                     <h1 style={{marginBottom: "10px !important"}}>
-                        {t('Home.Hero.heading1.1')}
-                        <div style={{height:"20px"}}/>
                         {t('Home.Hero.heading1.2')}
                     </h1>
                     <p className="hero__msg_tag">
