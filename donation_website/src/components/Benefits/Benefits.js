@@ -60,7 +60,7 @@ function Benefits() {
                         </div>
                     </li>
                     <p> 
-                      (*) For more information, please contact us with via <u>youremail@gmail.com</u>
+                     <u>{t('Benefits.contactEmail', {email:"youremail@gmail.com"})} </u>
                     </p>
                 </ul>
             </div>

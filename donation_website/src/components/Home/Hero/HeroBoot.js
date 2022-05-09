@@ -20,11 +20,8 @@ function HeroBoot() {
             >
                 <Carousel.Caption className="hero__msg">
                     <h1 style={{marginBottom: "10px !important"}}>
-                        {t('Home.Hero.heading1.2')}
+                        {t('Home.Hero.heading1')}
                     </h1>
-                    <p className="hero__msg_tag">
-                        {t('Home.Hero.heading2')}
-                    </p>
                     <button onClick={()=>history.push('/discover')}>
                         <span className="green"> 
                             {t('Home.Hero.button')}
@@ -41,14 +38,8 @@ function HeroBoot() {
             >
                 <Carousel.Caption className='hero__msg'>
                     <h1 style={{marginBottom: "10px !important"}}>
-                        {t('Home.Hero.heading1.1')}
+                        {t('Home.Hero.heading1')}
                     </h1>
-                    <h1>
-                        {t('Home.Hero.heading1.2')}
-                    </h1>
-                    <p className="hero__msg_tag">
-                        {t('Home.Hero.heading2')}
-                    </p>
                     <button onClick={()=>history.push('/discover')}>
                         <span className="green"> 
                             {t('Home.Hero.button')}

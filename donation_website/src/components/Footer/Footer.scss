@@ -54,11 +54,12 @@
       flex-direction: column;
       justify-content: center;
       li {
-        width: 50%;
+        width: 90%;
         display: flex;
         margin: 10px auto;
+        justify-content: space-around;
         div {
-          width:100%;
+          width:80%;
           margin-left: 20px;
           text-align: center;
         }
